@@ -1,0 +1,31 @@
+{
+  "name": "csm-demo-202002-plan-srv",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4",
+    "@sap/hana-client": "^2.7"
+  },
+  "devDependencies": {
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "hana": "cds deploy --to hana:csm-demo-202002-plan-srv-db --auto-undeploy",
+    "start": "cds run",
+    "build": "cds build"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql"
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}
